@@ -1,8 +1,8 @@
-CFLAG = -Wall -Wextra -Werror -g -fsanitize=address -ofast
+CFLAG = -Wall -Wextra -Werror 
 NAME = so_long
 SRC = so_long.c get_next_line.c get_next_line_utils.c so_long_utils.c so_long_utils2.c
-MLX = /home/ta9ra9/minilibx-linux/
-ARG = -lmlx -lXext -lX11
+MLX = -Lmlx -lmlx 
+ARG = -framework OpenGL -framework AppKit
 OBJ = $(SRC:.c=.o)
 CC = gcc
 
@@ -12,7 +12,7 @@ CC = gcc
 all: ${NAME}
 
 ${NAME}:    ${OBJ}
-			${CC} ${CFLAG} ${OBJ} -L${MLX} ${ARG} -o ${NAME}
+			${CC} ${CFLAG} ${OBJ} ${MLX} ${ARG} -o ${NAME}
 
 clean:
 		@rm -rf ${OBJ}

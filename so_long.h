@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/14 22:43:47 by rrakman           #+#    #+#             */
+/*   Updated: 2023/08/14 22:43:49 by rrakman          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
@@ -5,7 +17,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include </home/ta9ra9/minilibx-linux/mlx.h>
+# include <mlx.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 20
@@ -50,4 +62,5 @@ void	map_check_borders(t_game *game);
 void	map_len_check(t_game *game);
 void	map_check_pec(t_game *game);
 void	map_check_pec2(t_game *game);
+
 #endif

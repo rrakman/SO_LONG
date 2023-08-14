@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/14 22:43:59 by rrakman           #+#    #+#             */
+/*   Updated: 2023/08/14 22:44:00 by rrakman          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	args_check(int ac, char **av, t_game *game)
@@ -7,14 +19,6 @@ void	args_check(int ac, char **av, t_game *game)
 	if (ft_strncmp(av[1] + ft_strlen(av[1]) - 4, ".ber", 4) != 0)
 		error("Error\nInvalid file extension\n");
 	game->map_name = ft_strdup(av[1]);
-}
-int flood_fill
-
-
-void	valid_map(t_game *game)
-{
-	if(!flood_fill(game))
-		error("Error\nInvalid map\n");
 }
 
 void	ft_free(char **str)
@@ -54,7 +58,6 @@ void	map_read_2(t_game *game)
 	map_len_check(game);
 	map_check_pec(game);
 	ft_free(game->map);
-	valid_map(game);
 }
 
 void	map_read(t_game *game)
@@ -91,10 +94,4 @@ int	main(int ac, char **av)
 	args_check(ac, av, &game);
 	map_read(&game);
 	init_game(&game);
-	int width = 500;
-	int height = 500;
-
-	game.img = mlx_xpm_file_to_image(game.mlx, "1.xpm",&width, &height);
-	mlx_put_image_to_window(game.mlx, game.win, game.img, 0, 0);
-
 }
