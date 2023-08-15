@@ -6,7 +6,7 @@
 /*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 22:43:59 by rrakman           #+#    #+#             */
-/*   Updated: 2023/08/14 22:44:00 by rrakman          ###   ########.fr       */
+/*   Updated: 2023/08/15 06:55:28 by rrakman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,11 @@ void	map_read_2(t_game *game)
 	map_check_borders(game);
 	map_len_check(game);
 	map_check_pec(game);
+	map_cpy(game);
+	print_map_2d(game);
 	ft_free(game->map);
+	get_cords(game);
+	
 }
 
 void	map_read(t_game *game)
@@ -93,5 +97,5 @@ int	main(int ac, char **av)
 
 	args_check(ac, av, &game);
 	map_read(&game);
-	init_game(&game);
+	//init_game(&game);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/14 22:43:47 by rrakman           #+#    #+#             */
-/*   Updated: 2023/08/14 22:43:49 by rrakman          ###   ########.fr       */
+/*   Created: 2023/08/14 22:43:47 by =           #+#    #+#             */
+/*   Updated: 2023/08/15 00:10:17 by rrakman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ typedef struct game
 	void	*mlx;
 	void	*win;
 	char	*map_name;
-	int		size_line;
 	char	**map;
+	char 	**map_cpy;
 	int		map_fd;
 	int		map_w;
 	int		map_h;
@@ -49,8 +49,8 @@ typedef struct game
 	int		c;	
 	int		px;
 	int		py;
-	int		e_x;
-	int		e_y;
+	int		ex;
+	int		ey;
 	void	*img;
 }	t_game;
 
@@ -61,6 +61,9 @@ void	map_read(t_game *game);
 void	map_check_borders(t_game *game);
 void	map_len_check(t_game *game);
 void	map_check_pec(t_game *game);
-void	map_check_pec2(t_game *game);
+void	map_cpy(t_game *game);
+void	print_map_2d(t_game *game);
+void	get_cords(t_game *game);
+void	valid_path(t_game *game);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 22:44:26 by rrakman           #+#    #+#             */
-/*   Updated: 2023/08/14 22:44:27 by rrakman          ###   ########.fr       */
+/*   Updated: 2023/08/15 05:40:27 by rrakman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,37 @@ void	map_len_check(t_game *game)
 			error("Error\nMap isn't rectangular\n");
 		i++;
 	}
+}
+
+void	map_cpy(t_game *game)
+{
+	int	i;
+	
+	i = 0;
+	game->map_cpy = (char **)malloc(sizeof(char *) * game->map_h);
+	while (game->map[i])
+	{
+		game->map_cpy[i] = ft_strdup(game->map[i]);	
+		i++;
+	}
+}
+
+void	print_map_2d(t_game *game)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < game->map_h)
+	{
+		j = 0;
+		while (j < game->map_w)
+		{
+			printf("%c", game->map_cpy[i][j]);
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
+	printf("\n");
 }
