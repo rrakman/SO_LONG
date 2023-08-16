@@ -6,7 +6,7 @@
 /*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 22:44:26 by rrakman           #+#    #+#             */
-/*   Updated: 2023/08/15 05:40:27 by rrakman          ###   ########.fr       */
+/*   Updated: 2023/08/17 00:28:37 by rrakman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	map_cpy(t_game *game)
 	
 	i = 0;
 	game->map_cpy = (char **)malloc(sizeof(char *) * game->map_h);
-	while (game->map[i])
+	while (i < game->map_h)
 	{
 		game->map_cpy[i] = ft_strdup(game->map[i]);	
 		i++;
@@ -67,19 +67,11 @@ void	map_cpy(t_game *game)
 void	print_map_2d(t_game *game)
 {
 	int	i;
-	int	j;
 
 	i = 0;
 	while (i < game->map_h)
 	{
-		j = 0;
-		while (j < game->map_w)
-		{
-			printf("%c", game->map_cpy[i][j]);
-			j++;
-		}
-		printf("\n");
+		printf("%s", game->map_cpy[i]);
 		i++;
 	}
-	printf("\n");
 }

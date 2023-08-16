@@ -65,5 +65,6 @@ void	map_cpy(t_game *game);
 void	print_map_2d(t_game *game);
 void	get_cords(t_game *game);
 void	valid_path(t_game *game ,int x, int y);
+void	map_p_check(t_game *game);
 
 #endif

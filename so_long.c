@@ -6,7 +6,7 @@
 /*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 22:43:59 by rrakman           #+#    #+#             */
-/*   Updated: 2023/08/16 00:18:57 by rrakman          ###   ########.fr       */
+/*   Updated: 2023/08/17 00:44:14 by rrakman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void	map_read_2(t_game *game)
 	ft_free(game->map);
 	get_cords(game);
 	valid_path(game, game->px, game->py);
-	print_map_2d(game);
+	map_p_check(game);
 }
 
 void	map_read(t_game *game)
