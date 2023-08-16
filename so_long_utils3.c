@@ -6,7 +6,7 @@
 /*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 06:04:04 by rrakman           #+#    #+#             */
-/*   Updated: 2023/08/15 06:17:05 by rrakman          ###   ########.fr       */
+/*   Updated: 2023/08/15 22:43:48 by rrakman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ void    get_cords(t_game *game)
         j = 0;
         while (j < game->map_w)
         {
-            if (game->map[i][j] == 'P')
+            if (game->map_cpy[i][j] == 'P')
             {
                 game->px = j;
                 game->py = i;
             }
-            else if (game->map[i][j] == 'E')
+            else if (game->map_cpy[i][j] == 'E')
             {
                 game->ex = j;
                 game->ey = i;

@@ -6,7 +6,7 @@
 /*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 22:43:59 by rrakman           #+#    #+#             */
-/*   Updated: 2023/08/15 06:55:28 by rrakman          ###   ########.fr       */
+/*   Updated: 2023/08/16 00:18:57 by rrakman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,44 @@ void	ft_free(char **str)
 	free(str);
 }
 
+int	check_ec(t_game *game)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (game->map_cpy[i])
+	{
+		j = 0;
+		while (game->map_cpy[i][j])
+		{
+			if (game->map_cpy[i][j] != 'E' && game->map_cpy[i][j] != 'C')
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+void	valid_path(t_game *game, int x, int y)
+{
+	if (x >= game->map_w || x < 0 || y >= game->map_h || y < 0)
+		return ;
+	if (game->map_cpy[y][x] == '1')
+		return ;
+	if (game->map_cpy[y][x] != 'X')
+	{
+		game->map_cpy[y][x] = 'X';
+		valid_path(game, x, y + 1);
+		valid_path(game, x - 1, y);
+		valid_path(game, x, y - 1);
+		valid_path(game, x + 1, y);
+		if (check_ec(game) == 1)
+			return ;
+	}
+}
+
 void	map_read_2(t_game *game)
 {
 	int	i;
@@ -58,10 +96,10 @@ void	map_read_2(t_game *game)
 	map_len_check(game);
 	map_check_pec(game);
 	map_cpy(game);
-	print_map_2d(game);
 	ft_free(game->map);
 	get_cords(game);
-	
+	valid_path(game, game->px, game->py);
+	print_map_2d(game);
 }
 
 void	map_read(t_game *game)
