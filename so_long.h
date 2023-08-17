@@ -19,6 +19,12 @@
 # include <stdlib.h>
 # include <mlx.h>
 
+# define KEY_W				13
+# define KEY_A				0
+# define KEY_S				1
+# define KEY_D				2
+# define KEY_ESC  			53
+
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 20
 # endif
@@ -51,7 +57,12 @@ typedef struct game
 	int		py;
 	int		ex;
 	int		ey;
-	void	*img;
+	void	*collectible;
+	void	*exit;
+	void	*player;
+	void	*wall;
+	void	*floor;
+	int		moves;
 }	t_game;
 
 void	args_check(int ac, char **av, t_game *game);

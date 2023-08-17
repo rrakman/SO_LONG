@@ -6,11 +6,12 @@
 /*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 22:43:59 by rrakman           #+#    #+#             */
-/*   Updated: 2023/08/17 00:44:14 by rrakman          ###   ########.fr       */
+/*   Updated: 2023/08/17 02:02:39 by rrakman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include <string.h>
 
 void	args_check(int ac, char **av, t_game *game)
 {
@@ -96,7 +97,7 @@ void	map_read_2(t_game *game)
 	map_len_check(game);
 	map_check_pec(game);
 	map_cpy(game);
-	ft_free(game->map);
+	//ft_free(game->map);
 	get_cords(game);
 	valid_path(game, game->px, game->py);
 	map_p_check(game);
@@ -135,5 +136,5 @@ int	main(int ac, char **av)
 
 	args_check(ac, av, &game);
 	map_read(&game);
-	//init_game(&game);
+	init_game(&game);
 }
