@@ -6,7 +6,7 @@
 /*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 09:12:56 by rrakman           #+#    #+#             */
-/*   Updated: 2023/08/18 09:13:50 by rrakman          ###   ########.fr       */
+/*   Updated: 2023/08/18 09:25:21 by rrakman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,34 @@ void	ft_norm(t_game *game, int i, int j)
 		else if (ch == 'P')
 			mlx_put_image_to_window(game->mlx, game->win, game->pl, x, y);
 		j++;
+	}
+}
+
+void	put_wffpe(t_game *game)
+{
+	int		i;
+	int		j;
+	int		x;
+	int		y;
+	char	ch;
+
+	i = 0;
+	while (i < game->map_h)
+	{
+		j = 0;
+		while (j < ft_strlen(game->map_cpy[i]))
+		{
+			x = j * 50;
+			y = i * 50;
+			ch = game->map_cpy[i][j];
+			if (ch == '1')
+				mlx_put_image_to_window(game->mlx, game->win, game->w, x, y);
+			else
+				mlx_put_image_to_window(game->mlx, game->win, game->f, x, y);
+			j++;
+		}
+		j = 0;
+		ft_norm(game, i, j);
+		i++;
 	}
 }
