@@ -6,7 +6,7 @@
 /*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 22:43:59 by rrakman           #+#    #+#             */
-/*   Updated: 2023/08/17 02:02:39 by rrakman          ###   ########.fr       */
+/*   Updated: 2023/08/18 06:18:25 by rrakman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	valid_path(t_game *game, int x, int y)
 {
 	if (x >= game->map_w || x < 0 || y >= game->map_h || y < 0)
 		return ;
-	if (game->map_cpy[y][x] == '1')
+	if (game->map_cpy[y][x] == '1' || game->map_cpy[y][x] == 'E')
 		return ;
 	if (game->map_cpy[y][x] != 'X')
 	{
@@ -97,7 +97,6 @@ void	map_read_2(t_game *game)
 	map_len_check(game);
 	map_check_pec(game);
 	map_cpy(game);
-	//ft_free(game->map);
 	get_cords(game);
 	valid_path(game, game->px, game->py);
 	map_p_check(game);
@@ -127,6 +126,8 @@ void	map_read(t_game *game)
 		free(line);
 	}
 	close(game->map_fd);
+	if (game->map_h == 0)
+		error("Error\nEmpty file\n");
 	map_read_2(game);
 }
 
@@ -137,4 +138,6 @@ int	main(int ac, char **av)
 	args_check(ac, av, &game);
 	map_read(&game);
 	init_game(&game);
+	ft_free(game.map);
+	ft_free(game.map_cpy);
 }
