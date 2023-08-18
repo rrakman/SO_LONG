@@ -6,7 +6,7 @@
 /*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 06:30:14 by rrakman           #+#    #+#             */
-/*   Updated: 2023/08/18 06:36:09 by rrakman          ###   ########.fr       */
+/*   Updated: 2023/08/18 07:59:58 by rrakman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,6 @@ int	key_action(int keycode, t_game *game)
 		exit(0);
 	}
 	return (0);
-}
-
-int	close_window(t_game *game)
-{
-	mlx_destroy_window(game->mlx, game->win);
-	exit(0);
 }
 
 void	init_game(t_game *game)

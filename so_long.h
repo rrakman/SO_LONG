@@ -46,7 +46,7 @@ typedef struct game
 	void	*win;
 	char	*map_name;
 	char	**map;
-	char 	**map_cpy;
+	char	**map_cpy;
 	int		map_fd;
 	int		map_w;
 	int		map_h;
@@ -74,7 +74,7 @@ void	map_len_check(t_game *game);
 void	map_check_pec(t_game *game);
 void	map_cpy(t_game *game);
 void	get_cords(t_game *game);
-void	valid_path(t_game *game ,int x, int y);
+void	valid_path(t_game *game, int x, int y);
 void	map_p_check(t_game *game);
 void	put_wffpe(t_game *game);
 void	move_p_doru(t_game *game, char c);
@@ -82,5 +82,11 @@ void	move_p_rorl(t_game *game, char c);
 int		key_action(int keycode, t_game *game);
 int		close_window(t_game *game);
 void	init_images(t_game *game);
+void	ft_free(char **str);
+int		check_ec(t_game *game);
+int		close_window(t_game *game);
+void	update_position(t_game *game, int dy, int decrease_c);
+void	move_down(t_game *game);
+void	move_up(t_game *game);
 
 #endif
