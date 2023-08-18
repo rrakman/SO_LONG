@@ -6,7 +6,7 @@
 /*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 06:30:14 by rrakman           #+#    #+#             */
-/*   Updated: 2023/08/18 07:59:58 by rrakman          ###   ########.fr       */
+/*   Updated: 2023/08/18 09:23:36 by rrakman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 int	key_action(int keycode, t_game *game)
 {
 	if (keycode == KEY_A)
-		move_p_rorl(game, 'l');
+		move_l(game);
 	if (keycode == KEY_D)
-		move_p_rorl(game, 'r');
+		move_r(game);
 	if (keycode == KEY_S)
-		move_p_doru(game, 'd');
+		move_down(game);
 	if (keycode == KEY_W)
-		move_p_doru(game, 'u');
+		move_up(game);
 	if (keycode == KEY_ESC)
 	{
 		printf("ESC\n");

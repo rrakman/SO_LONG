@@ -77,8 +77,6 @@ void	get_cords(t_game *game);
 void	valid_path(t_game *game, int x, int y);
 void	map_p_check(t_game *game);
 void	put_wffpe(t_game *game);
-void	move_p_doru(t_game *game, char c);
-void	move_p_rorl(t_game *game, char c);
 int		key_action(int keycode, t_game *game);
 int		close_window(t_game *game);
 void	init_images(t_game *game);
@@ -88,5 +86,8 @@ int		close_window(t_game *game);
 void	update_position(t_game *game, int dy, int decrease_c);
 void	move_down(t_game *game);
 void	move_up(t_game *game);
+void	move_l(t_game *game);
+void	move_r(t_game *game);
+void	ft_norm(t_game *game, int i, int j);
 
 #endif
