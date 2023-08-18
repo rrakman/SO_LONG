@@ -15,9 +15,9 @@
 
 # include <fcntl.h>
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <mlx.h>
+# include "ft_printf/libftprintf.h"
 
 # define KEY_W				13
 # define KEY_A				0
@@ -83,7 +83,6 @@ void	init_images(t_game *game);
 void	ft_free(char **str);
 int		check_ec(t_game *game);
 int		close_window(t_game *game);
-void	update_position(t_game *game, int dy, int decrease_c);
 void	move_down(t_game *game);
 void	move_up(t_game *game);
 void	move_l(t_game *game);

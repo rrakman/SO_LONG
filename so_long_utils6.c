@@ -6,7 +6,7 @@
 /*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 09:12:56 by rrakman           #+#    #+#             */
-/*   Updated: 2023/08/18 09:25:21 by rrakman          ###   ########.fr       */
+/*   Updated: 2023/08/18 09:39:27 by rrakman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	error(char *str)
 {
-	printf("%s", str);
+	ft_printf("%s", str);
 	exit(1);
 }
 

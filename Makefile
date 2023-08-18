@@ -12,12 +12,15 @@ CC = gcc
 all: ${NAME}
 
 ${NAME}:    ${OBJ}
-			${CC} ${CFLAG} ${OBJ} ${MLX} ${ARG} -o ${NAME}
+			@make all -C ./ft_printf
+			${CC} ${CFLAG} ${OBJ} ${MLX} ${ARG} -o ${NAME} ft_printf/libftprintf.a
 
 clean:
+		@make clean -C ./ft_printf
 		@rm -rf ${OBJ}
 
 fclean:    clean
+			@make fclean -C ./ft_printf
 			@rm -rf ${NAME} 
 
 re:        fclean all

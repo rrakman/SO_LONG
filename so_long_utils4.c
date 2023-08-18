@@ -6,7 +6,7 @@
 /*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 06:30:14 by rrakman           #+#    #+#             */
-/*   Updated: 2023/08/18 09:23:36 by rrakman          ###   ########.fr       */
+/*   Updated: 2023/08/18 09:37:40 by rrakman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	key_action(int keycode, t_game *game)
 		move_up(game);
 	if (keycode == KEY_ESC)
 	{
-		printf("ESC\n");
+		ft_printf("ESC\n");
 		exit(0);
 	}
 	return (0);

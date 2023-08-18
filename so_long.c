@@ -6,7 +6,7 @@
 /*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 22:43:59 by rrakman           #+#    #+#             */
-/*   Updated: 2023/08/18 06:51:20 by rrakman          ###   ########.fr       */
+/*   Updated: 2023/08/18 09:30:10 by rrakman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ int	main(int ac, char **av)
 {
 	t_game	game;
 
+	ft_printf("Hello world\n");
 	args_check(ac, av, &game);
 	map_read(&game);
 	init_game(&game);
