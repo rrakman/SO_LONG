@@ -6,7 +6,7 @@
 /*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 22:44:08 by rrakman           #+#    #+#             */
-/*   Updated: 2023/08/18 09:38:56 by rrakman          ###   ########.fr       */
+/*   Updated: 2023/08/19 02:38:18 by rrakman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	update_game(t_game *game)
 {
 	mlx_clear_window(game->mlx, game->win);
 	put_wffpe(game);
-	ft_printf("moves = %d\n", game->moves);
+	ft_printf("%d\r", game->moves);
 }
 
 void	move_up(t_game *game)

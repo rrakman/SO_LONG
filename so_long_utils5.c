@@ -6,7 +6,7 @@
 /*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 06:49:06 by rrakman           #+#    #+#             */
-/*   Updated: 2023/08/18 07:58:44 by rrakman          ###   ########.fr       */
+/*   Updated: 2023/08/19 01:41:47 by rrakman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	check_ec(t_game *game)
 		j = 0;
 		while (game->map_cpy[i][j])
 		{
-			if (game->map_cpy[i][j] != 'E' && game->map_cpy[i][j] != 'C')
+			if (game->map_cpy[i][j] != 'C')
 				return (1);
 			j++;
 		}
@@ -49,7 +49,7 @@ void	valid_path(t_game *game, int x, int y)
 {
 	if (x >= game->map_w || x < 0 || y >= game->map_h || y < 0)
 		return ;
-	if (game->map_cpy[y][x] == '1' || game->map_cpy[y][x] == 'E')
+	if (game->map_cpy[y][x] == '1')
 		return ;
 	if (game->map_cpy[y][x] != 'X')
 	{

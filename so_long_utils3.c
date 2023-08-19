@@ -6,7 +6,7 @@
 /*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 06:04:04 by rrakman           #+#    #+#             */
-/*   Updated: 2023/08/18 05:45:23 by rrakman          ###   ########.fr       */
+/*   Updated: 2023/08/19 01:42:06 by rrakman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	map_p_check(t_game *game)
 		j = 0;
 		while (j < game->map_w)
 		{
-			if (game->map_cpy[i][j] == 'C')
+			if (game->map_cpy[i][j] == 'C' || game->map_cpy[i][j] == 'E')
 			{
 				error("Error\nInvalid map\n");
 			}
