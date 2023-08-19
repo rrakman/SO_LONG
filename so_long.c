@@ -6,7 +6,7 @@
 /*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 22:43:59 by rrakman           #+#    #+#             */
-/*   Updated: 2023/08/19 02:37:33 by rrakman          ###   ########.fr       */
+/*   Updated: 2023/08/19 03:04:05 by rrakman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int	main(int ac, char **av)
 
 	args_check(ac, av, &game);
 	map_read(&game);
-	if ((game.map_w - 1) * 50 > 5120/2 || (game.map_h) * 50 > 2880/2)
+	if ((game.map_w - 1) * 50 > 5120 / 2 || (game.map_h) * 50 > 2880 / 2)
 		error("Error\nMap is too big\n");
 	init_game(&game);
 	ft_free(game.map);

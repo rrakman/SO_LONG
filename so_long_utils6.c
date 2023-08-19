@@ -6,7 +6,7 @@
 /*   By: rrakman <rrakman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 09:12:56 by rrakman           #+#    #+#             */
-/*   Updated: 2023/08/18 09:39:27 by rrakman          ###   ########.fr       */
+/*   Updated: 2023/08/19 04:21:20 by rrakman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,18 @@ void	init_images(t_game *game)
 	int	x;
 	int	y;
 
-	game->w = mlx_xpm_file_to_image(game->mlx, "./wall.xpm", &x, &y);
-	game->f = mlx_xpm_file_to_image(game->mlx, "./floor.xpm", &x, &y);
-	game->coll = mlx_xpm_file_to_image(game->mlx, "./flower.xpm", &x, &y);
-	game->exit = mlx_xpm_file_to_image(game->mlx, "./exit.xpm", &x, &y);
-	game->pl = mlx_xpm_file_to_image(game->mlx, "./player.xpm", &x, &y);
+	game->w = mlx_xpm_file_to_image(game->mlx, "textures/wall.xpm", &x, &y);
+	game->f = mlx_xpm_file_to_image(game->mlx, "textures/floor.xpm", &x, &y);
+	game->coll = mlx_xpm_file_to_image(game->mlx, \
+		"textures/flower.xpm", &x, &y);
+	game->exit = mlx_xpm_file_to_image(game->mlx, \
+		"textures/exit.xpm", &x, &y);
+	game->pl = mlx_xpm_file_to_image(game->mlx, \
+		"textures/player.xpm", &x, &y);
+	if (!game->w || !game->f || !game->coll || !game->exit || !game->pl)
+	{
+		error("Error, Image Failed to Load.\n");
+	}
 }
 
 void	ft_norm(t_game *game, int i, int j)
